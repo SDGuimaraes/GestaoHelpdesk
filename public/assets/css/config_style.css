@@ -1,0 +1,57 @@
+.fixed-action-btn{
+    position:fixed;
+    z-index: 997;
+    right: 23px;
+    bottom: 23px;
+    margin-bottom: 0;
+    
+}
+.btn-floating.btn-large{
+    width:50px;
+    height: 50px;
+    padding:0px;
+    font-size:20px;
+    line-height:30px;
+    
+}
+.btn-large{
+    height:50px;
+    text-align:center;
+    border-radius:30px;
+    border-color: transparent transparent transparent;
+}
+
+.btn-large:hover{
+    width: 170px;
+    transition: .3s;
+    border-color: transparent transparent transparent;
+}
+
+.btn-floating{
+    display: inline-block;
+    overflow: hidden;
+    z-index: 1;
+    cursor: pointer;
+    vertical-align: middle;
+}
+.btn-floating i{
+    width: inline;
+    line-height: 45px;
+    margin-left: 3px;
+}
+#btn-excluir{
+    height:40px;
+    border-radius:20px;
+}
+#mmodal{
+    cursor:pointer;
+}
+#alert{
+    position:fixed;
+    z-index: 987;
+    right: 30px;
+    bottom: -12px;
+    width: 350px;
+    margin-bottom: 0;
+    
+}

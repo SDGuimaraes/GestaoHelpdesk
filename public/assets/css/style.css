@@ -1,0 +1,227 @@
+content{
+  background-color: rgba(0, 0, 0, 0.425);
+}
+ .fixed-action-btn{
+    position: fixed;
+    right:23px;
+    bottom:23px;
+    padding-top:15px;
+    margin-bottom:0;
+    z-index:997;
+    bottom:35px;
+    right:24px;
+  }
+  .btn-floating.btn-large{
+    width:170px;
+    height:40px;
+    padding:0;
+    font-size:17px;
+  }
+  .btnlarge{
+    height:40px;
+    line-height:40px;
+    font-size:18px;
+    padding: 0 28px;
+  }
+  .btn-floating{
+    display:inline-block;
+    color:#FFFFFF;
+    position: relative;
+    overflow: hidden;
+    z-index:1;
+    width:100px;
+    height:40px;
+    line-height:30px;
+    padding:0;
+    border-radius: 30px;
+    -webkit-transition: background-color .3s;
+    transition: background-color .3s;
+    cursor: pointer;
+    vertical-align: middle;
+  }
+  .btn-floating.btn-large i{
+    line-height: 40px;
+  }
+  
+  .btn-floating i{
+    width: inline;
+    display: inline-block;
+    text-align: center;
+    color: #fff;
+    font-size:1rem;
+    line-height:40px;
+    margin-right:3px ;
+  }
+  .btn-floating.btn-large:hover{
+    background-color: rgb(0, 48, 119);
+  }
+
+
+  #textcreate, #textcreate1{
+    outline: none;
+    resize: none;
+    overflow: hidden;
+  }
+  #textcreate1:is(:focus, :valid){
+    border:0,1px;
+    height: 190px;
+  }
+  
+  #textcreate::-webkit-scrollbar{
+    width: 0px;
+  }
+
+  .comentario-div{
+    animation: is-bouncing 1s ease-in-out alternate;
+    height:auto;
+    display:flex;
+  }
+  @keyframes is-bouncing{
+    to{
+      transform: translateY(2px);
+    }
+    
+  }
+  .comentariodiv, #comentario{
+    background-color: rgba(253, 253, 253, 0.699);
+    
+  }
+  #comentario{
+    width: 100%;
+    outline: none;
+    resize:none;
+    overflow:hidden;
+    height: 7px;
+    border: 1px size;
+    margin: 0px; 
+    top: 0px; 
+    left: 0px; 
+    text-align: justify; 
+    position: relative;
+  }
+  .card-body{
+    border: 1px;
+  }
+  #enviarComentario{
+    display:none;
+    border: 1px size; 
+    margin-top: 10px;
+    padding: 0px;
+    animation: 3s;
+    transition: .3s;
+    transform: translateY(10px);
+  }
+  #enviarComentario.animar{
+    display:block;
+    animation-name: slider ;
+    animation-duration: 2s;
+  }
+  
+  @keyframes slider{
+    from{
+      opacity: 0;
+    }
+    to{
+      opacity: 1;
+    }
+  }
+  #enviarComentario button{
+    width: 58px;
+    height: 30px;
+    margin: 3px;
+    
+    
+  }
+  
+  #check{
+    height:18px;
+    border-radius:4px;
+    cursor:pointer;
+    margin-right: 15px;
+  }
+  #checkname{
+    display: flex;
+    font-size:16px;
+    cursor: pointer;
+    margin-left: 10´px;
+  }
+  
+  #check:checked+#checkname{
+    background-color:green;
+    border-radius: 4px;
+    color:white;
+    width: 76px;
+    height:29px;
+    margin-left: 4px;
+    text-align:center;
+    transition: .3S ease-in-out;
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+  #transf{
+    width: 100px; 
+    height: 24px; 
+    line-height: 17px;
+    
+  }
+  #stats{
+    width: 120px; 
+    height: 24px; 
+    line-height: 17px;
+    padding: auto;
+    font-size:13px;
+  }
+  .comment #usercomentario{
+    height: 50px;
+  }
+  #userbtn{
+    display:none;
+    width: 25px;
+    padding:0;
+    margin:0;
+    height: 25px;
+    line-height: 25px;
+    border-radius: 8px;
+    text-align: center;
+  }
+  #userbtn.ativar{
+    display:block;
+    z-index: 997;
+    transform: translate(-267px, 54px);
+  }
+  #pencil{
+    position: absolute;
+    text-align: center;
+    left: 4px;
+    top: -1px;
+    z-index: 997;
+  }
+  #usercomentario{
+    border-radius: 10px;
+  }
+  
+  #usercoment{
+    
+    border-radius:25px;   
+  }
+  img{
+    height:50px;
+    width:50px;
+    border-radius:75px;
+  }
+  #token{
+    display:none;
+  }
+  #inicioabrir{
+    margin-right: 20px;
+    position: relative;
+  }
+  
+  
+  
+
+
+
+
+
+
