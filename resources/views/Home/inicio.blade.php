@@ -12,5 +12,6 @@ Home
 
 
 <button class="btn btn-primary btn-end" type="button" id="inicioabrir" data-bs-toggle="offcanvas" data-bs-target="#Abrirchamado" aria-controls="offcanvasRight">Abrir chamado</button>
+<a href={{route('home')}}>Entrar</a>
 
 @include('Home.offcans.abrirchamado')
