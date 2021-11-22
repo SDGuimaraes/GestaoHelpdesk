@@ -24,10 +24,10 @@ class Chamados extends Model
         'anexo',
     ];
 
-    public function categoria_id(){
+    public function categoria(){
         return $this->belongsTo(chamados_categorias::class);
     }
-    public function status_id(){
+    public function status(){
         return $this->belongsTo(chamados_status::class);
     }
 }

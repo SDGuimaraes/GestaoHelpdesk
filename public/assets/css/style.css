@@ -216,7 +216,17 @@ content{
     margin-right: 20px;
     position: relative;
   }
-  
+
+  #nav{
+    background-color: transparent transparent;
+  }
+  #iniciopesquisar{
+    margin-right:20px;
+    position: relative;
+  }
+  #hometitulo{
+    font-size:70px;
+  }
   
   
 

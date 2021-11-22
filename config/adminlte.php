@@ -190,7 +190,7 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => 'admin/home',
+    'dashboard_url' => '/',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
@@ -299,7 +299,7 @@ return [
                 [
                     'text' => 'Pagina Principal',
                     'icon' => 'fas fa-fw fa-chess-king',
-                    'url' => '##',
+                    'url' => 'admin/config/home',
                 ],
                 
             ],

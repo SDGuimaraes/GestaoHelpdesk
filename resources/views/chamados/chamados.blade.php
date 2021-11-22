@@ -26,6 +26,7 @@
   <thead class="table-light">
     <tr>
       <th class="text-center " style="width: 150px;" >Status</th>
+      <th class="text-center " >Id Chamado</th>
       <th class="text-center">Titulo</th>
       <th class="text-center">Categoria</th>
       <th class="text-center">Data Criação</th>
@@ -38,11 +39,12 @@
   <tbody>
     <div>
       <tr data-toggle="modal" data-target="#chamadoModalEdit{{$ch->id}}" style="cursor:pointer; ">
-          <td class="text-center"><span class="badge" id="stats" style="background-color:">{{$ch->status_id }}</span></td>
-          <td class="text-center">{{$ch->titulo}}</td>
-          <td class="text-center"><span class="badge rounded-pill"id="transf" style="background-color:">{{$ch->categoria_id}}</span></td>
-          <td class="text-center">{{$ch->created_at->format('d-m-Y - H:m')}}</td>
-          <td class="text-center">{{$ch->updated_at->format('d-m-Y - H:m')}}</td>
+          <td class="text-center"><span class="badge" id="stats" style="background-color:{{$ch->status->bg_color}}">{{$ch->status->status}}</span></td>
+          <td class="text-center"><strong>{{$ch->token}}</strong></td>
+          <td class="text-center">{{$ch->titulo}}</td>     
+          <td class="text-center"><span class="badge rounded-pill"id="transf" style="background-color:{{$ch->categoria->bg_color}}">{{$ch->categoria->categoria}}</span></td>
+          <td class="text-center">{{$ch->created_at->format('d-m-Y - H:i')}}</td>
+          <td class="text-center">{{$ch->updated_at->format('d-m-Y - H:i')}}</td>
           <td class="text-center"><span class="badge rounded-pill bg-primary"><i class="bi bi-at"></i>{{$ch->nome}}</span></td>
           <td class="text-center">{{$ch->anexo}}</td>
         </tr>

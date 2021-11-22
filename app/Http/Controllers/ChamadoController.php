@@ -7,6 +7,8 @@ use App\Models\chamados_categorias;
 use App\Models\chamados_status;
 use GuzzleHttp\Middleware;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\Storage;
 
 class ChamadoController extends Controller
 {
@@ -36,7 +38,14 @@ class ChamadoController extends Controller
         $chamados->email = $request->input('email');
         $chamados->desc = $request->input('desc');
         $chamados->categoria_id = $request->input('categoria_id');
-        $chamados->anexo = $request->input('anexo');
+        if($request->hasfile('anexo')){
+            $file = $request->file('anexo');
+            $extention = $file->getClientOriginalExtension();
+            $name = $file->getClientOriginalName();
+            $fillname = $name.'.'.$extention;
+            $file->move('assets/anexo/', $fillname);
+            $chamados->anexo = $fillname;
+        }
         $chamados->save();
 
         return redirect()->back()->with('status', 'Chamado criado com sucesso');
@@ -112,5 +121,15 @@ class ChamadoController extends Controller
         $st->save();
 
         return redirect()->back()->with('status','Status editado');
+    }
+    public function download(Request $request, $anexo){
+
+        $path = public_path().'/assets/anexo/'.$anexo;
+
+        $headers = array(
+            'content-type' => 'application/xlsx',
+            'content-type' => 'application/jpg'
+        );
+        return Response::download($path, $anexo, $headers);
     }
 }

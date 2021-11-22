@@ -18,10 +18,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/',[HomeController::class, 'index']);
+Route::post('/chamado',[HomeController::class, 'criarChamado'])->name('criar.chamado');
+route::any('/buscarchamado', [HomeController::class, 'pesquisar'])->name('pesquisa.chamado');
+Route::get('/download{anexo}',[ChamadoController::class, 'download']);
+
 Auth::routes();
 
 Route::prefix('admin')->group(function () {
-    Route::get('/', [AdminController::class, 'index'])->name('home');
+    Route::get('/', [AdminController::class, 'index'])->name('principal');
     Route::get('/chamados',[ChamadoController::class, 'index'])->name('chamado');
     Route::post('/chamados',[ChamadoController::class, 'chamado_criar'])->name('criar_chamado');
     Route::put('/chamados/{id}/editar',[ChamadoController::class, 'chamado_editar'])->name('editar_chamado');
@@ -38,6 +42,9 @@ Route::prefix('admin')->group(function () {
     Route::get('/chamados/configuracao/status',[ChamadoController::class, 'status'])->name('config_status');
     Route::post('/chamados/configuracao/statuscriar',[ChamadoController::class, 'status_criar'])->name('config_st_criar');
     Route::put('/chamados/configuracao/{id}/statuseditar',[ChamadoController::class, 'status_editar'])->name('config_st_editar');
+    //configuração home 
+    Route::get('/config/home',[AdminController::class, 'configInicial'])->name('config.home');
+    Route::put('/config/{id}/home',[AdminController::class, 'configInicialSalvar'])->name('config.home.salvar');
 });
 
 

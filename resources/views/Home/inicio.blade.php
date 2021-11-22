@@ -8,10 +8,38 @@
 
 
 
-Home
 
 
-<button class="btn btn-primary btn-end" type="button" id="inicioabrir" data-bs-toggle="offcanvas" data-bs-target="#Abrirchamado" aria-controls="offcanvasRight">Abrir chamado</button>
-<a href={{route('home')}}>Entrar</a>
+@if(session('status'))
+        <h6 class="alert alert-success">{{session('status')}}</h6>
+@endif
+
+@foreach ( $homes as $home )
+<nav class="navbar navbar-expand-lg " id="nav">
+    <div class="container-fluid">
+        <a class="navbar-brand" style="color:{{$home->txcor}}">{{$home->titulo}}</a>
+        <form class="d-flex" action="{{route('pesquisa.chamado')}}" method="post" enctype="multipart/form-data">
+            @csrf
+            <input type="text" class="input-control" name="pesquisar" placeholder="Consulte aqui o id do chamado">
+            <button type="submit" class="btn btn-success" id="iniciopesquisar" >Consultar</button>
+            <button class="btn btn-outline-light " type="button" id="inicioabrir" data-bs-toggle="offcanvas" data-bs-target="#Abrirchamado" aria-controls="offcanvasRight">Abrir chamado</button>       
+            <a class="btn btn-outline-dark" href={{route('principal')}}>Entrar</a>
+
+        </form>
+    </div>
+</nav>
+
+
+<body class="" style="background-image:linear-gradient({{$home->bgcor1}},{{$home->bgcor2}})">
+    <div class="content" style="margin-left: 100px;">
+        <h1 style="color:{{$home->txcor}};" id="hometitulo">{{$home->titulo}}</h1><br>
+        <h3 style="color:{{$home->txcor}}" id="homesubtitulo">{{$home->subtitulo}}</h3>
+    </div>
+
+
+@endforeach
+
+
 
 @include('Home.offcans.abrirchamado')
+@include('Home.offcans.pesquisar')
