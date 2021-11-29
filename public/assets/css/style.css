@@ -217,9 +217,6 @@ content{
     position: relative;
   }
 
-  #nav{
-    background-color: transparent transparent;
-  }
   #iniciopesquisar{
     margin-right:20px;
     position: relative;
@@ -227,6 +224,7 @@ content{
   #hometitulo{
     font-size:70px;
   }
+  
   
   
 

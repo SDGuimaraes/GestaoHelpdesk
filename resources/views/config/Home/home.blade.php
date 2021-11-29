@@ -36,13 +36,56 @@
                 <div class="input-group mb-3">
                   <input type="text" class="form-control" name="subtitulo" value="{{$home->subtitulo}}">
                 </div><br>
-                <div class="input-group mb-2 mt-2">
+                <div class="input-group mt-2">
                 <label for="basic-url" class="form-label mr-2">Cor de fundo 1:</label>
                 <input type="color" name="bgcor1" value="{{$home->bgcor1}}" class="input-control  mr-2" style="width:40px;">
                 <label for="basic-url" class="form-label ml-2 mr-2">Cor de fundo 2:</label>
                 <input type="color" name="bgcor2" value="{{$home->bgcor2}}" class="input-control  mr-2" style="width:40px;">
                 <label for="basic-url" class="form-label ml-2 mr-2">Cor do texto:</label>
                 <input type="color" name="txcor" value="{{$home->txcor}}" class="input-control " style="width:40px;">
+                <br><br>
+                <div class="input-group">
+                    <div class="card p-2 mr-3">
+                        <label for="basic-url" class="form-label"><i class="bi bi-type mr-2"></i>Titulo Card 1</label>
+                        <div class="input-group mb-1">
+                        <input type="text" class="form-control" name="c1titulo" value="{{$home->c1titulo}}">
+                        </div><br>
+                        <label for="basic-url" class="form-label"><i class="bi bi-type mr-2"></i>Sub-titulo card 1</label>
+                        <div class="input-group mb-1">
+                        <input type="text" class="form-control" name="c1subtitulo" value="{{$home->c1subtitulo}}">
+                        </div><br>
+                    </div>
+                    <div class="card p-2 mr-3">
+                        <label for="basic-url" class="form-label"><i class="bi bi-type mr-2"></i>Titulo Card 2</label>
+                        <div class="input-group mb-1">
+                        <input type="text" class="form-control" name="c2titulo" value="{{$home->c2titulo}}">
+                        </div><br>
+                        <label for="basic-url" class="form-label"><i class="bi bi-type mr-2"></i>Sub-titulo card 2</label>
+                        <div class="input-group mb-1">
+                        <input type="text" class="form-control" name="c2subtitulo" value="{{$home->c2subtitulo}}">
+                        </div><br>
+                    </div>
+                    <div class="card p-2 mr-3">
+                        <label for="basic-url" class="form-label"><i class="bi bi-type mr-2"></i>Titulo Card 3</label>
+                        <div class="input-group mb-1">
+                        <input type="text" class="form-control" name="c3titulo" value="{{$home->c3titulo}}">
+                        </div><br>
+                        <label for="basic-url" class="form-label"><i class="bi bi-type mr-2"></i>Sub-titulo card 3</label>
+                        <div class="input-group mb-1">
+                        <input type="text" class="form-control" name="c3subtitulo" value="{{$home->c3subtitulo}}">
+                        </div><br>
+                    </div>
+                    <div class="card p-2 mr-3">
+                        <label for="basic-url" class="form-label"><i class="bi bi-type mr-2"></i>Titulo Card 4</label>
+                        <div class="input-group mb-1">
+                        <input type="text" class="form-control" name="c4titulo" value="{{$home->c4titulo}}">
+                        </div><br>
+                        <label for="basic-url" class="form-label"><i class="bi bi-type mr-2"></i>Sub-titulo card 4</label>
+                        <div class="input-group mb-1">
+                        <input type="text" class="form-control" name="c4subtitulo" value="{{$home->c4subtitulo}}">
+                        </div><br>
+                    </div>
+                </div>
             </div>
             </div>
             <div class="form-group">

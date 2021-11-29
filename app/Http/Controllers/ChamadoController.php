@@ -15,8 +15,7 @@ class ChamadoController extends Controller
     public function __construct(){
         $this->middleware('auth');
     }
-    public function index(){
-        
+    public function index(){  
         $chamados = Chamados::all();
         $categorias = chamados_categorias::all();
         $status = chamados_status::all();
@@ -42,7 +41,7 @@ class ChamadoController extends Controller
             $file = $request->file('anexo');
             $extention = $file->getClientOriginalExtension();
             $name = $file->getClientOriginalName();
-            $fillname = $name.'.'.$extention;
+            $fillname = $name;
             $file->move('assets/anexo/', $fillname);
             $chamados->anexo = $fillname;
         }
@@ -124,12 +123,7 @@ class ChamadoController extends Controller
     }
     public function download(Request $request, $anexo){
 
-        $path = public_path().'/assets/anexo/'.$anexo;
-
-        $headers = array(
-            'content-type' => 'application/xlsx',
-            'content-type' => 'application/jpg'
-        );
-        return Response::download($path, $anexo, $headers);
+        
+        return response()->download(public_path().'/assets/anexo/'.$anexo);
     }
 }

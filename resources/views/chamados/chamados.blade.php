@@ -46,7 +46,7 @@
           <td class="text-center">{{$ch->created_at->format('d-m-Y - H:i')}}</td>
           <td class="text-center">{{$ch->updated_at->format('d-m-Y - H:i')}}</td>
           <td class="text-center"><span class="badge rounded-pill bg-primary"><i class="bi bi-at"></i>{{$ch->nome}}</span></td>
-          <td class="text-center">{{$ch->anexo}}</td>
+          <td class="text-center"><a href='{{url('/admin/download',$ch->anexo)}}'>{{$ch->anexo}}</a></td>
         </tr>
     </div>
   </tbody> 

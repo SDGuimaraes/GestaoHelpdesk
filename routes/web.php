@@ -17,10 +17,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',[HomeController::class, 'index']);
+Route::get('/',[HomeController::class, 'index'])->name('home');
 Route::post('/chamado',[HomeController::class, 'criarChamado'])->name('criar.chamado');
 route::any('/buscarchamado', [HomeController::class, 'pesquisar'])->name('pesquisa.chamado');
-Route::get('/download{anexo}',[ChamadoController::class, 'download']);
+
 
 Auth::routes();
 
@@ -30,9 +30,8 @@ Route::prefix('admin')->group(function () {
     Route::post('/chamados',[ChamadoController::class, 'chamado_criar'])->name('criar_chamado');
     Route::put('/chamados/{id}/editar',[ChamadoController::class, 'chamado_editar'])->name('editar_chamado');
     Route::post('/chamados/{id}/excluir',[ChamadoController::class, 'chamado_excluir'])->name('excluir_chamado');
-    Route::get('/perfil',function () {
-        return 'perfil';
-    });
+    Route::get('/download/{anexo}',[ChamadoController::class, 'download']);
+    
     //configuração chamados categoria
     Route::get('/chamados/configuracao/categoria',[ChamadoController::class, 'categoria'])->name('config_categoria');
     Route::post('/chamados/configuracao/categoriasave',[ChamadoController::class, 'categoria_criar'])->name('config_cat_save');
@@ -45,6 +44,10 @@ Route::prefix('admin')->group(function () {
     //configuração home 
     Route::get('/config/home',[AdminController::class, 'configInicial'])->name('config.home');
     Route::put('/config/{id}/home',[AdminController::class, 'configInicialSalvar'])->name('config.home.salvar');
+    //configuração Usuarios
+    Route::get('/perfil',function () {
+        return 'perfil';
+    });
 });
 
 

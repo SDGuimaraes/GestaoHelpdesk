@@ -24,12 +24,22 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Request $request)
     {
         $homes = Home::all();
         $categorias = chamados_categorias::all();
-        $chamados = Chamados::all();
-        return view('Home.inicio', ['categorias' => $categorias, 'homes' => $homes, 'chamados' => $chamados]);
+        
+
+        $pesquisas = request('token');
+
+        if($pesquisas){
+            $chamados = Chamados::where(['token'=> $pesquisas])->get();
+
+        }else{
+            $chamados = Chamados::all();
+        }
+
+        return view('Home.inicio', ['categorias' => $categorias, 'homes' => $homes, 'chamados' => $chamados, 'pesquisas' => $pesquisas]);
     }
 
 
@@ -51,7 +61,7 @@ class HomeController extends Controller
         }
         $chamados->save();
 
-        return redirect()->back()->with('status', 'Chamado criado com sucesso');
+        return redirect()->back()->with('status','Chamado criado com sucesso Id do chamado:'.$chamados->token);
     }
 
     public function pesquisar(Request $request){

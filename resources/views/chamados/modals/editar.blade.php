@@ -24,7 +24,7 @@
                   </div>
                   <label for="basic-url" class="form-label mt-2"> <i class="bi bi-intersect mr-1"></i>Categoria</label>
                   <div class="input-group mb-3">
-                    <span class="badge rounded-pill bg-secondary" style="padding-left:15px; padding-right:15px; font-size:16px;">{{$ch->categoria_id}}</span>
+                    <span class="badge rounded-pill" style="padding-left:15px; padding-right:15px; font-size:16px; background-color:{{$ch->categoria->bg_color}}">{{$ch->categoria->categoria}}</span>
                   </div>
                   <label  class="form-label mt-2"><i class="bi bi-person mr-1"></i>Solicitante</label>
                   <div class="input-group mb-3">
@@ -36,7 +36,7 @@
                   </div>
                   <label  class="form-label mt-2"><i class="bi bi-at mr-1"></i>Anexo</label>
                   <div class="input-group mb-3">
-                    <a href='{{url('/download',$ch->anexo)}}'>{{$ch->anexo}}</a>
+                    <a href='{{url('/admin/download',$ch->anexo)}}'>{{$ch->anexo}}</a>
                   </div>
                   <!--<label  class="form-label mt-2"><i class="bi bi-calendar mr-1"></i>Data de Criação</label>
                   <div class="input-group mb-3">

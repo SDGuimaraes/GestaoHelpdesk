@@ -17,7 +17,7 @@
             <input type="text" class="form-control" name="titulo" placeholder="Digite aqui...">
           </div>
           <div class="input-group mb-3" id="token">
-            <input type="text" class="form-control" name="token" placeholder="Digite aqui..."></div>
+            <input type="text" class="form-control" name="token" placeholder="Digite aqui..." style="display:none;"></div>
           </div>
           <label for="basic-url" class="form-label"><i class="bi bi-person-lines-fill mr-2" style="margin-right: 5px;"></i>Nome do Solicitante</label>
           <div class="input-group mb-3">
