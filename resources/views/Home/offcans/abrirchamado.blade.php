@@ -12,22 +12,22 @@
               {{ _('Novo Chamado')}}
           </h5>
           <hr>
-          <label for="basic-url" class="form-label"><i class="bi bi-type mr-2" style="margin-right: 5px;"></i>Titulo do chamado</label>
+          <label for="basic-url" class="form-label"><i class="bi bi-type mr-2" style="margin-right: 5px;" ></i>Titulo do chamado</label>
           <div class="input-group mb-3">
-            <input type="text" class="form-control" name="titulo" placeholder="Digite aqui...">
+            <input type="text" class="form-control" name="titulo" placeholder="Digite aqui..." required>
           </div>
           <div class="input-group mb-3" id="token">
             <input type="text" class="form-control" name="token" placeholder="Digite aqui..." style="display:none;"></div>
           </div>
           <label for="basic-url" class="form-label"><i class="bi bi-person-lines-fill mr-2" style="margin-right: 5px;"></i>Nome do Solicitante</label>
           <div class="input-group mb-3">
-            <input type="text" class="form-control" name="nome" placeholder="Digite aqui...">
+            <input type="text" class="form-control" name="nome" placeholder="Digite aqui..." required>
           </div>
           <label for="basic-url" class="form-label"><i class="bi bi-at mr-2" style="margin-right: 5px;"></i>Email de Contato</label>
           <div class="input-group mb-3">
-            <input type="email" class="form-control" name="email" placeholder="Digite aqui...">
+            <input type="email" class="form-control" name="email" placeholder="Digite aqui..."required>
           </div>
-          <label for="basic-url" class="form-label mt-2"><i class="bi bi-list mr-2" style="margin-right: 5px;"></i>Descrição</label>
+          <label for="basic-url" class="form-label mt-2"><i class="bi bi-list mr-2" style="margin-right: 5px;" required></i>Descrição</label>
           <div class="input-group mb-3">
             <textarea class="form-control" onkeypress="auto_grow(this);" onkeyup="auto_grow(this);" placeholder="Digite aqui..." name="desc" id="textcreate"></textarea>
           </div>               

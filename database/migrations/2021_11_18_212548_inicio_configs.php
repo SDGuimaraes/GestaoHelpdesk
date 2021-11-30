@@ -20,6 +20,14 @@ class InicioConfigs extends Migration
             $table->string('bgcor1');
             $table->string('bgcor2')->nullable();
             $table->string('txcor');
+            $table->string('c1titulo')->nullable();
+            $table->string('c2titulo')->nullable();
+            $table->string('c3titulo')->nullable();
+            $table->string('c4titulo')->nullable();
+            $table->string('c1subtitulo')->nullable();
+            $table->string('c2subtitulo')->nullable();
+            $table->string('c3subtitulo')->nullable();
+            $table->string('c4subtitulo')->nullable();
             $table->timestamps();
         });
     }
