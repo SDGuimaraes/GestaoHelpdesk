@@ -54,8 +54,9 @@ class HomeController extends Controller
         $chamados->categoria_id = $request->input('categoria_id');
         if($request->hasfile('anexo')){
             $file = $request->file('anexo');
+            $name = $file->getClientOriginalName();
             $extention = $file->getClientOriginalExtension();
-            $fillname = time().'.'.$extention;
+            $fillname = $name;
             $file->move('assets/anexo/', $fillname);
             $chamados->anexo = $fillname;
         }

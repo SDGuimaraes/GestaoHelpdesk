@@ -123,12 +123,12 @@
                 </form>
                 @if ($pesquisas)
                     <h5>Consultando ID do Chamado: {{$pesquisas}}</h5>
-                
+                <div class="card" id="pesquisa">
                     <table class="table">
                         <thead>
                         <tr>
-                            <th>Status</th>
-                            <th>Id Chamado</th>
+                            <th style="width:150px;">Status</th>
+                            <th style="width:180px;">Id Chamado</th>
                             <th>titulo</th>
                             <th>resposta</th>
                         </tr>
@@ -136,15 +136,15 @@
                         @foreach ( $chamados as $ch )
                         <tbody>
                             <tr>
-                                <td>{{$ch->status->status}}</td>
-                                <td>{{$ch->token}}</td>
+                                <td><span class="badge" id="stats" style="background-color:{{$ch->status->bg_color}}; font-size: 1em;">{{$ch->status->status}}</span></td>
+                                <td >{{$ch->token}}</td>
                                 <td>{{$ch->titulo}}</td>
                                 <td>{{$ch->resp}}</td>
                             </tr>
                         </tbody>
                             @endforeach
                     </table>
-
+                </div>   
                     
                 @else
                 
