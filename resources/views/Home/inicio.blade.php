@@ -36,13 +36,13 @@
     
     <!-- fim do Header -->
     <div class="block" id="topo">
-        <div class="container pt-5" id="bodyContent"  style=" height:80%; background-image:linear-gradient({{$home->bgcor1}},{{$home->bgcor2}})">
+        <div class="container pt-5" id="bodyContent"  style="background-image:linear-gradient({{$home->bgcor1}},{{$home->bgcor2}})">
             <div class="titulo" id="titulo">
                 <h1 class="display-1 text-center" style="color:{{$home->txcor}};" id="hometitulo">{{$home->titulo}}</h1><br>
                 <h3 class="text-center"style="color:{{$home->txcor}}" id="homesubtitulo">{{$home->subtitulo}}</h3>
             </div>
             <div class="row">
-                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                <div class="col-lg-3 col-md-6  mb-lg-0">
                     <div class="card" id="card">
                         <div class="card-content">
                             <a>
@@ -107,6 +107,7 @@
     </div>
     
 @endforeach
+
     <div class="container">
         @if(session('status'))
         <h6 class="alert alert-success">{{session('status')}}</h6>
@@ -152,7 +153,13 @@
                 
             </div>
     </div>
+
 </body>
+<footer>
+    <section class="footer">
+        <p class="copyright">LPBC - All rights reserved @ 2021</p>
+    </section>
+</footer>
 
 
 
