@@ -253,6 +253,11 @@ return [
             'url'         => 'admin',
             'icon'        => 'fa fa-fw fa-home',
         ],
+        [
+            'text' => 'Email',
+            'url'  => 'admin/email',
+            'icon' => 'fas fa-fw',
+        ],
         ['header' => 'Chamados'],
         [
             'text' => 'Chamados',
@@ -296,15 +301,15 @@ return [
                     'icon' => 'fas fa-fw fa-user-cog',
                     'url' => '##',
                 ],
-                [
+                /*[
                     'text' => 'Pagina Principal',
                     'icon' => 'fas fa-fw fa-chess-king',
                     'url' => 'admin/config/home',
-                ],
+                ],*/
                 
             ],
         ],
-        ['header' => 'labels'],
+       /* ['header' => 'labels'],
         [
             'text'       => 'important',
             'icon_color' => 'red',
@@ -319,7 +324,7 @@ return [
             'text'       => 'information',
             'icon_color' => 'cyan',
             'url'        => '#',
-        ],
+        ],*/
     ],
 
     /*
