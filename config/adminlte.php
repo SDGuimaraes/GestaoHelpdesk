@@ -256,13 +256,13 @@ return [
         [
             'text' => 'Email',
             'url'  => 'admin/email',
-            'icon' => 'fas fa-fw',
+            'icon' => 'fa fa-fw fa-envelope',
         ],
         ['header' => 'Chamados'],
         [
             'text' => 'Chamados',
             'url'  => 'admin/chamados',
-            'icon' => 'fas fa-fw fa-ambulance',
+            'icon' => 'fas fa-fw fa-plus-square',
         ],
         [
             'text' => 'Clientes',

@@ -22,31 +22,40 @@
 <button type="button" class="btn-floating btn-large btn-primary" data-toggle="modal" data-target="#novoChamado"><i class="bi bi-plus-lg"></i>Novo Chamado</button>
 </div>
 
-<table class="table table-hover  border-black align-middle ">
+<table class="table table-hover border-black align-middle ">
   <thead class="table-light">
     <tr>
-      <th class="text-center " style="width: 150px;" >Status</th>
-      <th class="text-center " >Id Chamado</th>
+      <th class="text-center" style="width: 150px;" >Status</th>
+      <th class="text-center">Id Chamado</th>
       <th class="text-center">Titulo</th>
       <th class="text-center">Categoria</th>
       <th class="text-center">Data Criação</th>
       <th class="text-center">Ultima alteração</th>
       <th class="text-center">Solicitante</th>
-      <th class="text-center">Anexo</th>
+      <th class="text-center">Ações</th>
     </tr>
   </thead>
   @foreach ( $chamados as $ch)
   <tbody>
     <div>
-      <tr data-toggle="modal" data-target="#chamadoModalEdit{{$ch->id}}" style="cursor:pointer; ">
-          <td class="text-center"><span class="badge" id="stats" style="background-color:{{$ch->status->bg_color}}">{{$ch->status->status}}</span></td>
+      <tr >
+          <td class="text-center"  style="cursor:pointer;"><span class="badge" id="stats" style="background-color:{{$ch->status->bg_color}}">{{$ch->status->status}}</span></td>
           <td class="text-center"><strong>{{$ch->token}}</strong></td>
           <td class="text-center">{{$ch->titulo}}</td>     
           <td class="text-center"><span class="badge rounded-pill"id="transf" style="background-color:{{$ch->categoria->bg_color}}">{{$ch->categoria->categoria}}</span></td>
           <td class="text-center">{{$ch->created_at->format('d-m-Y - H:i')}}</td>
           <td class="text-center">{{$ch->updated_at->format('d-m-Y - H:i')}}</td>
-          <td class="text-center"><span class="badge rounded-pill bg-primary"><i class="bi bi-at"></i>{{$ch->nome}}</span></td>
-          <td class="text-center"><a href='{{url('/admin/download',$ch->anexo)}}'>{{$ch->anexo}}</a></td>
+          <td class="text-center"><span class="badge rounded-pill bg-dark" style="padding:10px;"><i class="bi bi-at" style="font-size:12px;"></i>{{$ch->nome}}</span></td>
+          <td class="text-center">
+            <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#chamadoModalEdit{{$ch->id}}"><i class="bi bi-display"></i></button>
+            @if($ch->anexo != null)
+            <button type="button" class="btn btn-success" href='{{url('/admin/download',$ch->anexo)}}'>
+            <i class="bi bi-download"></i>
+            </button>
+            @else
+            <button type="button" class="btn btn-secondary" disabled><i class="bi bi-at"></i></button>
+            @endif
+          </td>
         </tr>
     </div>
   </tbody> 

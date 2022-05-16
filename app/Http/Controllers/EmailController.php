@@ -15,7 +15,7 @@ class EmailController extends Controller
 
     public function index()
     {
-        $username = env('MAIL_USERNAME');
+        /*$username = env('MAIL_USERNAME');
         $password = env('MAIL_PASSWORD');
 
         // create Imap_parser Object
@@ -30,8 +30,8 @@ class EmailController extends Controller
             'T3st@123'
         )) {
             $inbox = $email->getMessages('html');
-        }
+        }*/
 
-        return view('email.entrada', $inbox);
+        return view('email.entrada');
     }
 }

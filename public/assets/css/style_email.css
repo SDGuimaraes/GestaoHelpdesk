@@ -1,0 +1,11 @@
+#inbox{
+    margin-left:12px;
+    margin-right: 12px;
+}
+table,tr{
+    height:50px;
+    line-height: 50px;
+}
+#texto{
+    height:200px;
+}

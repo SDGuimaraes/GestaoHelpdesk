@@ -9,7 +9,7 @@ class Email extends Model
 {
     use HasFactory;
 
-    private $imapStream;
+    /*private $imapStream;
     private $plaintextMessage;
     private $htmlMessage;
     private $emails;
@@ -18,7 +18,7 @@ class Email extends Model
     private $attachments_dir = 'attachments';
     public function connect($hostname, $username, $password) {
         $connection = imap_open($hostname, $username, $password) or die('Cannot connect to Mail: ' . imap_last_error());
-        if (!preg_match("/Resource.id.*/", (string) $connection)) {
+        if (!preg_match("/Resource.id.", (string) $connection)) {
             return $connection; //return error message
         }
         $this->imapStream = $connection;
@@ -242,5 +242,5 @@ class Email extends Model
                 //SAVE YOUR LOG OF ERRORS
             }
         }
-    }
+    }*/
 }

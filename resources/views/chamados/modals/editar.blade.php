@@ -34,10 +34,12 @@
                   <div class="input-group mb-3">
                     <span class="badge rounded-pill bg-primary" style="padding-left:15px; padding-right:15px; font-size:16px;"><i class="bi bi-at"></i>{{$ch->email}}</span>
                   </div>
-                  <label  class="form-label mt-2"><i class="bi bi-at mr-1"></i>Anexo</label>
+                  @if($ch->anexo != null)
+                  <label  class="form-label mt-2"><i class="bi bi-file-earmark-fill mr-1"></i>Anexo</label>
                   <div class="input-group mb-3">
                     <a href='{{url('/admin/download',$ch->anexo)}}'>{{$ch->anexo}}</a>
                   </div>
+                  @endif
                   <!--<label  class="form-label mt-2"><i class="bi bi-calendar mr-1"></i>Data de Criação</label>
                   <div class="input-group mb-3">
                     <div class="input-group justify-content-start mr-3" style="width:190px; ">
