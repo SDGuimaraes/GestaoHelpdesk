@@ -16,7 +16,7 @@
                   <h5 class="modal-title mx-3 mb-4"style="align-heigth:40px">
                     {{$ch->titulo}}
                   </h5>
-                  <label for="basic-url" class="form-label"><i class="bi bi-exclamation-octagon mr-1"></i>id do chamado: {{$ch->token}}</label>
+                  <label for="basic-url" class="form-label"><i class="bi bi-exclamation-octagon mr-1"></i>id do chamado: <strong style="font-size:20px;">{{$ch->token}}</strong></label>
                   <br>
                   <label for="basic-url" class="form-label"><i class="bi bi-info-square mr-1"></i>Titulo</label>
                   <div class="input-group mb-3">

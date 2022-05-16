@@ -12,6 +12,7 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    protected $table ="users";
     
 
     /**
@@ -23,6 +24,13 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'sexo',
+        'cpf',
+        'img',
+        'ddd',
+        'telefone',
+        'cliente_id',
+        'status_id'
     ];
 
     /**
@@ -43,7 +51,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
     public function chamados(){
-        return $this->hasMany(Chamados::class);
+        return $this->hasMany(Chamados::class, 'user_id', 'id');
+    }
+    public function status(){
+        return $this->belongsTo(UserStatus::class,'status_id', 'id');
+    }
+    public function clientes(){
+        return $this->belongsTo(Cliente::class, 'cliente_id', 'id');
     }
 }

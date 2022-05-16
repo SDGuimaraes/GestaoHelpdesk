@@ -45,7 +45,7 @@
           <td class="text-center"><span class="badge rounded-pill"id="transf" style="background-color:{{$ch->categoria->bg_color}}">{{$ch->categoria->categoria}}</span></td>
           <td class="text-center">{{$ch->created_at->format('H:i - d/m')}}</td>
           <td class="text-center">{{$ch->updated_at->format('H:i - d/m')}}</td>
-          <td class="text-center"><span class="badge rounded-pill bg-dark" style="padding:10px;"><i class="bi bi-at" style="font-size:12px;"></i>{{$ch->nome}}</span></td>
+          <td class="text-center"><span class="badge rounded-pill bg-dark" style="padding:10px;"><i class="bi bi-at" style="font-size:12px;"></i>{{$ch->usuario->name}}</span></td>
           <td class="text-center">
             <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#chamadoModalEdit{{$ch->id}}"><i class="bi bi-display"></i></button>
             @if($ch->anexo != null)

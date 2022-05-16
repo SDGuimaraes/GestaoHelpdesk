@@ -22,6 +22,7 @@ class Chamados extends Model
         'categoria_id',
         'status_id',
         'anexo',
+        'user_id',
     ];
 
     public function categoria(){
@@ -30,7 +31,7 @@ class Chamados extends Model
     public function status(){
         return $this->belongsTo(chamados_status::class);
     }
-    public function user(){
-        return $this->belongsTo(User::class);
+    public function usuario(){
+        return $this->belongsTo(User::class, 'user_id', 'id');
     }
 }

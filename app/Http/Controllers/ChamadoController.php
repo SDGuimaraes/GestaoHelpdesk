@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Chamados;
 use App\Models\chamados_categorias;
 use App\Models\chamados_status;
+use App\Models\User;
 use GuzzleHttp\Middleware;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
@@ -19,11 +20,14 @@ class ChamadoController extends Controller
         $chamados = Chamados::all();
         $categorias = chamados_categorias::all();
         $status = chamados_status::all();
+        $usuarios = User::all();
+
 
         return view('chamados.chamados',[
             'chamados' => $chamados,
             'categorias' => $categorias,
             'status' => $status,
+            'usuarios' => $usuarios,
             
         ]);
     }

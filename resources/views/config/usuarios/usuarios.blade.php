@@ -12,6 +12,9 @@
                     <tr>
                         <th class="text-center">Usuario</th>
                         <th >Email</th>
+                        <th class="text-center">Status</th>
+                        <th class="text-center">Cliente</th>
+                        <th class="text-center">Setor</th>
                         <th class="text-center">Acões</th>
                     </tr>
                 </thead>
@@ -20,6 +23,9 @@
                 <tr>
                     <td>{{$us->name}}</td>
                     <td>{{$us->email}}</td>
+                    <td>{{$us->status->nome}}</td>
+                    <td>{{$us->clientes->nome}}</td>
+                    <td>{{$us->clientes->setores->nome}}</td>
                     <td></td>
                 </tr>
             </tbody>

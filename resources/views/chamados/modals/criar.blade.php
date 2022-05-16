@@ -1,4 +1,5 @@
 <form action="{{ route('criar_chamado')}}" method="post" enctype="multipart/form-data">
+  @foreach ($chamados as $ch)
   @csrf
   <div class="modal fade" id="novoChamado" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-md" role="document">
@@ -23,11 +24,11 @@
                 </div>
                 <label for="basic-url" class="form-label"><i class="bi bi-person-lines-fill mr-2"></i>Nome do Solicitante</label>
                 <div class="input-group mb-3">
-                  <input type="text" class="form-control" name="nome" placeholder="Digite aqui...">
+                  <input type="text" class="form-control" name="nome" value={{$ch->usuario->name}}>
                 </div>
                 <label for="basic-url" class="form-label"><i class="bi bi-at mr-2" ></i>Email de Contato</label>
                 <div class="input-group mb-3">
-                  <input type="email" class="form-control" name="email" placeholder="Digite aqui...">
+                  <input type="email" class="form-control" name="email" value={{$ch->usuario->email}}>
                 </div>
                 <label for="basic-url" class="form-label mt-2"><i class="bi bi-list mr-2"></i>Descrição</label>
                 <div class="input-group mb-3">
@@ -51,7 +52,7 @@
             </div>
             <button type="submit" class="btn btn-primary mx-3 mb-3" style="width:94%; heigth: 50px; ">Novo Chamado</button>
         </div>
-          
+        @endforeach 
         
       </div>
     </div>
