@@ -29,10 +29,10 @@
       <th class="text-center">Id Chamado</th>
       <th class="text-center">Titulo</th>
       <th class="text-center">Categoria</th>
-      <th class="text-center">Data Criação</th>
-      <th class="text-center">Ultima alteração</th>
+      <th class="text-center" style="width: 150px;">Data Criação</th>
+      <th class="text-center" style="width: 150px;">Ultima alteração</th>
       <th class="text-center">Solicitante</th>
-      <th class="text-center">Ações</th>
+      <th class="text-center"style="width: 150px;">Ações</th>
     </tr>
   </thead>
   @foreach ( $chamados as $ch)
@@ -43,8 +43,8 @@
           <td class="text-center"><strong>{{$ch->token}}</strong></td>
           <td class="text-center">{{$ch->titulo}}</td>     
           <td class="text-center"><span class="badge rounded-pill"id="transf" style="background-color:{{$ch->categoria->bg_color}}">{{$ch->categoria->categoria}}</span></td>
-          <td class="text-center">{{$ch->created_at->format('d-m-Y - H:i')}}</td>
-          <td class="text-center">{{$ch->updated_at->format('d-m-Y - H:i')}}</td>
+          <td class="text-center">{{$ch->created_at->format('H:i - d/m')}}</td>
+          <td class="text-center">{{$ch->updated_at->format('H:i - d/m')}}</td>
           <td class="text-center"><span class="badge rounded-pill bg-dark" style="padding:10px;"><i class="bi bi-at" style="font-size:12px;"></i>{{$ch->nome}}</span></td>
           <td class="text-center">
             <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#chamadoModalEdit{{$ch->id}}"><i class="bi bi-display"></i></button>

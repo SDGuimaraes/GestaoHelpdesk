@@ -9,3 +9,11 @@ table,tr{
 #texto{
     height:200px;
 }
+#icon_star{
+    margin-top: 12px;
+    font-size:18px;
+}
+#icon_attachment{
+    margin-top: 12px;
+    font-size:18px;
+}

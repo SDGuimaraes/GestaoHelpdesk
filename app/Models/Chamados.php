@@ -30,4 +30,7 @@ class Chamados extends Model
     public function status(){
         return $this->belongsTo(chamados_status::class);
     }
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }

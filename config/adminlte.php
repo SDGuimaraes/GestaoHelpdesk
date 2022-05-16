@@ -299,7 +299,7 @@ return [
                 [
                     'text' => 'Usuarios',
                     'icon' => 'fas fa-fw fa-user-cog',
-                    'url' => '##',
+                    'url' => 'admin/usuarios',
                 ],
                 /*[
                     'text' => 'Pagina Principal',

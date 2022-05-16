@@ -97,18 +97,18 @@
                             <div class="table-responsive mailbox-messages">
                                 <table class="table table-hover table-striped border-black align-middle">
                                     <tbody>
-                                        <tr>
+                                        <tr data-toggle="modal" data-target="#verEmail">
                                             <td >
                                                 <div class="icheck-primary">
                                                     <input type="checkbox" value="" id="check1">
                                                 <label for="check1"></label>
                                                 </div>
                                             </td>
-                                            <td class="mailbox-star"><a href="#"><i class="fas fa-star text-warning"></i></a></td>
+                                            <td class="mailbox-star"><a href="#"><i id="icon_star" class="fas fa-star text-warning"></i></a></td>
                                             <td class="mailbox-name"><a href="read-mail.html">Alexandre</a></td>
                                             <td class="mailbox-subject"><b>Assunto</b> - resolução de problema...
                                             </td>
-                                            <td class="mailbox-attachment"><i class="fas fa-paperclip"></i></td>
+                                            <td class="mailbox-attachment"><i id="icon_attachment" class="fas fa-paperclip"></i></td>
                                             <td class="mailbox-date">5 mins ago</td>
                                         </tr>
                                         <tr>
@@ -122,7 +122,7 @@
                                             <td class="mailbox-name"><a href="read-mail.html">Carlos</a></td>
                                             <td class="mailbox-subject"><b>Problema Carregador</b> - Carregador parou de funcionar no...
                                             </td>
-                                            <td class="mailbox-attachment"><i class="fas fa-paperclip"></i></td>
+                                            <td class="mailbox-attachment"><i id="icon_attachment" class="fas fa-paperclip"></i></td>
                                             <td class="mailbox-date">28 mins ago</td>
                                         </tr>
                                     </tbody>
@@ -169,4 +169,4 @@
 <!-- Modal -->
 
 @include("email.email.novo")
-
+@include("email.email.email")
