@@ -258,23 +258,18 @@ return [
             'url'  => 'admin/email',
             'icon' => 'fa fa-fw fa-envelope',
         ],
-        ['header' => 'Chamados'],
+
         [
             'text' => 'Chamados',
             'url'  => 'admin/chamados',
             'icon' => 'fas fa-fw fa-plus-square',
         ],
         [
-            'text' => 'Clientes',
-            'icon' => 'fas fa-fw fa-address-book',
-            'submenu' => [ 
-                [
-                    'text' => 'Cadastrar',
-                    'icon' => 'fas fa-fw fa-plus-square',
-                    'url' => '##',
-                ]
-            ],
+            'text' => 'Meu perfil',
+            'icon' => 'fas fa-fw fa-user',
+            'url' => 'admin/usuarios',
         ],
+        
         ['header' => 'Configuração'],
         [
             'text'    => 'Configuração',
@@ -295,6 +290,17 @@ return [
                             'url'  => 'admin/chamados/configuracao/status',
                         ],
                     ],   
+                ],
+                [
+                    'text' => 'Clientes',
+                    'icon' => 'fas fa-fw fa-address-book',
+                    'submenu' => [ 
+                        [
+                            'text' => 'Cadastrar',
+                            'icon' => 'fas fa-fw fa-plus-square',
+                            'url' => '##',
+                        ]
+                    ],
                 ],
                 [
                     'text' => 'Usuarios',

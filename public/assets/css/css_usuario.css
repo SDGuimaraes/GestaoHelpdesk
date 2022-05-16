@@ -1,0 +1,9 @@
+input[type="checkbox"]{
+    
+    width: 100px;
+    height: 30px;
+    background-color:"green";
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .3s;
+}

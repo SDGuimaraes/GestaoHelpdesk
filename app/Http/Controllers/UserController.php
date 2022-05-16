@@ -24,4 +24,9 @@ class UserController extends Controller
             'setores' => $setores,
         ]);
     }
+    public function update(Request $request, $id){
+
+        
+            
+    }
 }

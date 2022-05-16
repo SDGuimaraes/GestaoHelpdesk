@@ -11,7 +11,7 @@
     },
     "devDependencies": {
         "axios": "^0.21",
-        "bootstrap": "^4.6.1",
+        "bootstrap": "^5.2.0-beta1",
         "jquery": "^3.6",
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
@@ -21,7 +21,7 @@
         "sass-loader": "^11.0.1"
     },
     "dependencies": {
-        "bootstrap-icons": "^1.7.0",
+        "bootstrap-icons": "^1.8.2",
         "tinymce": "^5.10.1"
     }
 }

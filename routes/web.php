@@ -51,6 +51,7 @@ Route::prefix('admin')->group(function () {
     Route::put('/config/{id}/home',[AdminController::class, 'configInicialSalvar'])->name('config.home.salvar');
     //configuração Usuarios
     Route::get('/usuarios',[UserController::class, 'index'])->name('usuarios');
+    route::Post('/usuarios/{id}/Ativo',[UserController::class, 'update'])->name("usuarioAt");
     
 });
 
