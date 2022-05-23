@@ -8,6 +8,7 @@ use App\Models\chamados_status;
 use App\Models\User;
 use GuzzleHttp\Middleware;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Storage;
 
@@ -34,21 +35,24 @@ class ChamadoController extends Controller
     //chamados
     public function chamado_criar(Request $request){
 
+        $user= Auth::user()->name;
+        $usuario = User::find($user);
+
         $chamados = new Chamados;
-        $chamados->titulo = $request->input('titulo');
         $chamados->token = uniqid("#");
+        $chamados->titulo = $request->input('titulo');
         $chamados->nome = $request->input('nome');
         $chamados->email = $request->input('email');
         $chamados->desc = $request->input('desc');
         $chamados->categoria_id = $request->input('categoria_id');
         if($request->hasfile('anexo')){
             $file = $request->file('anexo');
-            $extention = $file->getClientOriginalExtension();
             $name = $file->getClientOriginalName();
             $fillname = $name;
             $file->move('assets/anexo/', $fillname);
             $chamados->anexo = $fillname;
         }
+        $chamados->user_id = $request->input('user_id');
         $chamados->save();
 
         return redirect()->back()->with('status', 'Chamado criado com sucesso');
@@ -127,7 +131,11 @@ class ChamadoController extends Controller
     }
     public function download(Request $request, $anexo){
 
-        
+        if((public_path().'/assets/anexo/'.$anexo) === null){
+            return redirect()->back()->with('erro','Arquivo de download não encontrado.');
+        }else{
+
         return response()->download(public_path().'/assets/anexo/'.$anexo);
+        }
     }
 }
