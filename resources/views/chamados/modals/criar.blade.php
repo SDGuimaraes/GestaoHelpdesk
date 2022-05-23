@@ -1,6 +1,7 @@
 <form action="{{ route('criar_chamado')}}" method="post" enctype="multipart/form-data">
-  @foreach ($chamados as $ch)
   @csrf
+ 
+  
   <div class="modal fade" id="novoChamado" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-md" role="document">
       <div class="modal-content">
@@ -17,27 +18,30 @@
                 <hr>
                 <label for="basic-url" class="form-label"><i class="bi bi-type mr-2"></i>Titulo do chamado</label>
                 <div class="input-group mb-3">
-                  <input type="text" class="form-control" name="titulo" placeholder="Digite aqui...">
+                  <input type="text" name="titulo" class="form-control"  placeholder="Digite aqui..." required>
                 </div>
                 <div class="input-group mb-3" id="token">
-                  <input type="text" class="form-control" name="token" placeholder="Digite aqui..."></div>
+                  <input type="text" class="form-control" name="token" placeholder="Digite aqui...">
+                </div>
+                <div class="input-group mb-3" id="token">
+                  <input type="text" class="form-control" name="user_id" value={{Auth::user()->id}} placeholder="Digite aqui...">
                 </div>
                 <label for="basic-url" class="form-label"><i class="bi bi-person-lines-fill mr-2"></i>Nome do Solicitante</label>
                 <div class="input-group mb-3">
-                  <input type="text" class="form-control" name="nome" value={{$ch->usuario->name}}>
+                  <input type="text" class="form-control" name="nome" value={{Auth::user()->name}}>
                 </div>
                 <label for="basic-url" class="form-label"><i class="bi bi-at mr-2" ></i>Email de Contato</label>
                 <div class="input-group mb-3">
-                  <input type="email" class="form-control" name="email" value={{$ch->usuario->email}}>
-                </div>
+                  <input type="email" class="form-control" name="email" value={{Auth::user()->email}}>
+                </div> 
                 <label for="basic-url" class="form-label mt-2"><i class="bi bi-list mr-2"></i>Descrição</label>
                 <div class="input-group mb-3">
-                  <textarea class="form-control" onkeypress="auto_grow(this);" onkeyup="auto_grow(this);" placeholder="Digite aqui..." name="desc" id="textcreate"></textarea>
+                  <textarea class="form-control" name="desc" onkeypress="auto_grow(this);" onkeyup="auto_grow(this);" placeholder="Digite aqui..."  id="textcreate" required></textarea>
                 </div>               
                 <label for="basic-url" class="form-label mt-2"><i class="bi bi-bookmark mr-2" ></i>Categorias</label>
                 <div class="input-group">
-                  <select class="form-select" name="categoria_id" id="CategoriaChamado">
-                    <option selected>Categorias...</option>
+                  <select class="form-select" name="categoria_id"  id="CategoriaChamado" required>
+                    <option value="">Categorias</option>
                     @foreach ($categorias as $cat)
                     <option value="{{$cat->id}}">{{$cat->categoria}}</span></option>
                     @endforeach
@@ -52,7 +56,7 @@
             </div>
             <button type="submit" class="btn btn-primary mx-3 mb-3" style="width:94%; heigth: 50px; ">Novo Chamado</button>
         </div>
-        @endforeach 
+        
         
       </div>
     </div>

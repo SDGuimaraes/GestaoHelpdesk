@@ -47,12 +47,12 @@ return [
     |
     */
 
-    'logo' => '<b>LPBC</b>',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo' => 'LPBC',
+    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png', /// editar filtro pro cliente
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => 'AdminLTE',
+    'logo_img_alt' => null,
 
     /*
     |--------------------------------------------------------------------------
@@ -264,17 +264,23 @@ return [
             'url'  => 'admin/chamados',
             'icon' => 'fas fa-fw fa-plus-square',
         ],
-        [
-            'text' => 'Meu perfil',
-            'icon' => 'fas fa-fw fa-user',
-            'url' => 'admin/usuarios',
-        ],
+        
         
         ['header' => 'Configuração'],
         [
             'text'    => 'Configuração',
             'icon'    => 'fas fa-fw fa-cogs',
             'submenu' => [
+                [
+                    'text' => 'Meu perfil',
+                    'icon' => 'fas fa-fw fa-user',
+                    'url' => 'admin/perfil',
+                ],
+                [
+                    'text' => 'Usuarios',
+                    'icon' => 'fas fa-fw fa-user-cog',
+                    'url' => 'admin/usuarios',
+                ],
                 [
                     'text' => 'Chamados',
                     'icon' => 'fas fa-fw fa-first-aid',
@@ -302,11 +308,7 @@ return [
                         ]
                     ],
                 ],
-                [
-                    'text' => 'Usuarios',
-                    'icon' => 'fas fa-fw fa-user-cog',
-                    'url' => 'admin/usuarios',
-                ],
+                
                 /*[
                     'text' => 'Pagina Principal',
                     'icon' => 'fas fa-fw fa-chess-king',

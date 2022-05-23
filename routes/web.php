@@ -37,6 +37,10 @@ Route::prefix('admin')->group(function () {
     Route::get('/download/{anexo}',[ChamadoController::class, 'download']);
     //Email
     Route::get('/email', [EmailController::class, 'index'])->name('email');
+
+    //Perfil usuario
+    route::post('/perfil/{id}/atualizar',[UserController::class, 'update'])->name("usuario_perfil");
+    route::get('/perfil', [UserController::class, 'perfil'])->name('perfil');
     //configuração chamados categoria
     Route::get('/chamados/configuracao/categoria',[ChamadoController::class, 'categoria'])->name('config_categoria');
     Route::post('/chamados/configuracao/categoriasave',[ChamadoController::class, 'categoria_criar'])->name('config_cat_save');
@@ -51,7 +55,7 @@ Route::prefix('admin')->group(function () {
     Route::put('/config/{id}/home',[AdminController::class, 'configInicialSalvar'])->name('config.home.salvar');
     //configuração Usuarios
     Route::get('/usuarios',[UserController::class, 'index'])->name('usuarios');
-    route::Post('/usuarios/{id}/Ativo',[UserController::class, 'update'])->name("usuarioAt");
+    
     
 });
 

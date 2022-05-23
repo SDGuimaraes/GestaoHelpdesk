@@ -15,23 +15,27 @@ class EmailController extends Controller
 
     public function index()
     {
-        /*$username = env('MAIL_USERNAME');
-        $password = env('MAIL_PASSWORD');
-
-        // create Imap_parser Object
-        $email = new Email();
-
-        $inbox = null;
+        $connect = imap_open('{imap.uni5.net:993/imap/ssl}INBOX', 'herick.guimares@lpbc.com.br', 'herick2021',OP_HALFOPEN)
+            or die("Não conectado " . imap_last_error());
 
 
-        if ($email->connect(
-            '{imap.gmail.com:993/ssl}INBOX',
-            'ttesteimap@gmail.com',
-            'T3st@123'
-        )) {
-            $inbox = $email->getMessages('html');
-        }*/
+        $list = imap_list($connect, "{imap.uni5.net:993/imap/ssl}", "*.Sent");
+        if (is_array($list)) {
+            foreach ($list as $val) {
+                echo imap_utf7_decode($val) . "<br>";
+            }
+        } else {
+            echo "imap list falhou " . imap_last_error() . "\n";
+        }
 
-        return view('email.entrada');
+        $inbox = imap_search($connect,'ALL');
+
+        
+        imap_close($connect);
+
+        return view("email.entrada", [
+            'list' => $list,
+            'inbox' => $inbox,
+        ]);
     }
 }

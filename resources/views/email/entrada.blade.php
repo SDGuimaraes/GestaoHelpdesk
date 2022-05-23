@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="{{ url ('/assets/css/style_email.css') }}">
 @endsection
 
-
+    
 
 @section('content')
 <body>
@@ -30,9 +30,11 @@
                         </div>
                         <div class="card-body p-0">
                             <ul class="nav nav-pills flex-column">
+                                @foreach ( $list as $li )
                                 <li class="nav-item active">
-                                    <a href="#" class="nav-link"><i class="fas fa-inbox"></i> Caixa de entrada </a>
+                                    <a href="#" class="nav-link"><i class="fas fa-inbox"></i> {{$li}} </a>
                                 </li>
+                                @endforeach
                                 <li class="nav-item">
                                     <a href="#" class="nav-link"><i class="far fa-envelope"></i> Enviados</a>
                                 </li>
@@ -97,6 +99,23 @@
                             <div class="table-responsive mailbox-messages">
                                 <table class="table table-hover table-striped border-black align-middle">
                                     <tbody>
+                                        
+                                        @if (!empty($inbox))
+
+                                       
+                                        @foreach ($inbox as $email)
+                                            @php
+                                            rsrot($email);
+                                            $overview = imap_fetch_overview($connect, $email);
+                                            $overview = $overview[0];
+                                            
+                                            $date = date("d F, Y", strtotime($overview->date));
+                                            //echo '<b>'.htmlentities($overview->subject).'</b>';
+                                            $message = imap_fetchbody($connect, $email, 1,FT_PEEK);
+                                            //echo 'From: ' . $overview->from . '<br><br>';
+                                            @endphp
+                                            
+                                        
                                         <tr data-toggle="modal" data-target="#verEmail">
                                             <td >
                                                 <div class="icheck-primary">
@@ -105,12 +124,17 @@
                                                 </div>
                                             </td>
                                             <td class="mailbox-star"><a href="#"><i id="icon_star" class="fas fa-star text-warning"></i></a></td>
-                                            <td class="mailbox-name"><a href="read-mail.html">Alexandre</a></td>
-                                            <td class="mailbox-subject"><b>Assunto</b> - resolução de problema...
+                                            <td class="mailbox-name"><a href="read-mail.html">{{$overview->from}}</a></td>
+                                            <td class="mailbox-subject"><b>{{htmlentities($overview->subject)}}</b> 
                                             </td>
                                             <td class="mailbox-attachment"><i id="icon_attachment" class="fas fa-paperclip"></i></td>
-                                            <td class="mailbox-date">5 mins ago</td>
+                                            <td class="mailbox-date">{{$date}}</td>
                                         </tr>
+                                        @endforeach
+                                        @else
+                                       
+                                            <td>ERRRRRRRRROR</td>
+                                        @endif
                                         <tr>
                                             <td>
                                             <div class="icheck-primary">

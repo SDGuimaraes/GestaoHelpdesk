@@ -7,10 +7,13 @@
 @endsection
 @section('content')
     <section class="content">
+        
         <div class="card card-solid">
             <div class="card-body pb-0">
+                <h1>contagem usuario:{{count($usuario)}}</h1>
                 <div class="row">
                 @foreach ($usuario as $us)
+                
                     <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column">
                         <div class="card bg-light d-flex flex-fill">
                             <div class="card-header text-muted border-bottom-0">
@@ -27,7 +30,11 @@
                                     </ul>
                                 </div>
                                 <div class="col-5 text-center">
-                                    <img src="../../dist/img/user1-128x128.jpg" alt="user-avatar" class="img-circle img-fluid">
+                                    @if($us->img === null)
+                                    <img src="{{url('assets/usuarios/teste.jpg')}}" alt="user-avatar" class="img-circle img-fluid">
+                                    @else
+                                    <img src={{$us->img}} alt="user-avatar" class="img-circle img-fluid">
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -36,13 +43,14 @@
                                 <a href="#" class="btn btn-sm bg-teal">
                                     <i class="fas fa-comments"></i>
                                 </a>
-                                <a href="#" class="btn btn-sm btn-primary">
-                                    <i class="fas fa-user"></i> View Profile
+                                <a href="" class="btn btn-sm btn-primary">
+                                    <i class="fas fa-user"></i> Ver Perfil
                                 </a>
                             </div>
                         </div>
                         </div>
                     </div>
+                    
                 @endforeach
                 </div>
             </div>

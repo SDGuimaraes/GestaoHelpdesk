@@ -18,6 +18,9 @@
 @if(session('status'))
         <h6 class="alert alert-success">{{session('status')}}</h6>
 @endif
+@if(session('erro'))
+        <h6 class="alert alert-danger">{{session('erro')}}</h6>
+@endif
  <div class="fixed-action-btn">
 <button type="button" class="btn-floating btn-large btn-primary" data-toggle="modal" data-target="#novoChamado"><i class="bi bi-plus-lg"></i>Novo Chamado</button>
 </div>
@@ -39,21 +42,21 @@
   <tbody>
     <div>
       <tr >
-          <td class="text-center"  style="cursor:pointer;"><span class="badge" id="stats" style="background-color:{{$ch->status->bg_color}}">{{$ch->status->status}}</span></td>
+          <td class="text-center"  style="cursor:pointer;"><span class=" info-box-icon bg-gradient badge elevation-1" id="stats" style="background-color:{{$ch->status->bg_color}}">{{$ch->status->status}}</span></td>
           <td class="text-center"><strong>{{$ch->token}}</strong></td>
           <td class="text-center">{{$ch->titulo}}</td>     
-          <td class="text-center"><span class="badge rounded-pill"id="transf" style="background-color:{{$ch->categoria->bg_color}}">{{$ch->categoria->categoria}}</span></td>
+          <td class="text-center"><span class="badge rounded-pill bg-gradient elevation-1"id="transf" style="background-color:{{$ch->categoria->bg_color}}">{{$ch->categoria->categoria}}</span></td>
           <td class="text-center">{{$ch->created_at->format('H:i - d/m')}}</td>
           <td class="text-center">{{$ch->updated_at->format('H:i - d/m')}}</td>
-          <td class="text-center"><span class="badge rounded-pill bg-dark" style="padding:10px;"><i class="bi bi-at" style="font-size:12px;"></i>{{$ch->usuario->name}}</span></td>
+          <td class="text-center"><span class="badge rounded-pill bg-dark elevation-1" style="padding:10px;"><i class="bi bi-at" style="font-size:12px;"></i>{{$ch->usuario->name}}</span></td>
           <td class="text-center">
-            <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#chamadoModalEdit{{$ch->id}}"><i class="bi bi-display"></i></button>
+            <button type="button" class="btn bg-gradient btn-outline-primary elevation-1" data-toggle="modal" data-target="#chamadoModalEdit{{$ch->id}}"><i class="bi bi-display"></i></button>
             @if($ch->anexo != null)
-            <button type="button" class="btn btn-success" href='{{url('/admin/download',$ch->anexo)}}'>
+            <a href='{{url('/admin/download',$ch->anexo)}}'> <button type="button" class="btn bg-gradient btn-success" >
             <i class="bi bi-download"></i>
-            </button>
+            </button></a>
             @else
-            <button type="button" class="btn btn-secondary" disabled><i class="bi bi-at"></i></button>
+            <button type="button" class="btn bg-gradient btn-secondary" disabled><i class="bi bi-at"></i></button>
             @endif
           </td>
         </tr>

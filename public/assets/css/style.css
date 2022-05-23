@@ -160,16 +160,12 @@ content{
   }
   #transf{
     width: 100px; 
-    height: 24px; 
-    line-height: 17px;
+    height: 50px; 
     
   }
   #stats{
-    width: 120px; 
-    height: 24px; 
-    line-height: 17px;
-    padding: auto;
-    font-size:13px;
+    width: 100px; 
+    height: 10px; 
   }
   .comment #usercomentario{
     height: 50px;
